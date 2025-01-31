@@ -91,8 +91,6 @@ def classify_url():
 @app.route('/favicon.ico')
 def favicon():
     return '', 204
-if __name__ == "__main__":
-    app.run(debug=True, host="127.0.0.1", port=8000)
-# Run the Flask app
-if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+import os
+port = int(os.environ.get("PORT", 10000))  # Use Render's assigned port
+app.run(host="0.0.0.0", port=port)
